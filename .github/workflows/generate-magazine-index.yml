@@ -1,0 +1,97 @@
+
+name: Generate Magazine Index
+
+on:
+  push:
+    paths:
+      - 'Ten10_auto_issue*/**'
+      - '.github/workflows/generate-magazine-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate magazine-index.json
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const root = process.cwd();
+
+          const folders = fs.readdirSync(root, { withFileTypes: true })
+            .filter(entry =>
+              entry.isDirectory() &&
+              /^Ten10_auto_issue\d+$/i.test(entry.name)
+            )
+            .map(entry => ({
+              name: entry.name,
+              number: Number(entry.name.match(/\d+$/)[0])
+            }))
+            .sort((a, b) => a.number - b.number);
+
+          const issues = folders.map(folder => {
+            const folderPath = path.join(root, folder.name);
+            const files = fs.readdirSync(folderPath);
+
+            const coverPattern = new RegExp(
+              `^Ten10_Magazine_n${folder.number}_cover\\.(jpg|jpeg|png|webp)$`,
+              'i'
+            );
+
+            const pagePattern = new RegExp(
+              `^Ten10_Magazine_n${folder.number}_page_(\\d+)\\.(jpg|jpeg|png|webp)$`,
+              'i'
+            );
+
+            const cover = files.find(file => coverPattern.test(file));
+
+            const pages = files
+              .map(file => {
+                const match = file.match(pagePattern);
+                return match
+                  ? { filename: file, number: Number(match[1]) }
+                  : null;
+              })
+              .filter(Boolean)
+              .sort((a, b) => a.number - b.number)
+              .map(page => page.filename);
+
+            return {
+              number: folder.number,
+              folder: folder.name,
+              cover: cover || null,
+              pages
+            };
+          });
+
+          const output = JSON.stringify({ issues }, null, 2) + '\n';
+
+          fs.writeFileSync(
+            path.join(root, 'magazine-index.json'),
+            output
+          );
+
+          console.log(`Generated index for ${issues.length} issues.`);
+          NODE
+
+      - name: Commit updated index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add magazine-index.json
+
+          if git diff --cached --quiet; then
+            echo "Magazine index is already up to date."
+          else
+            git commit -m "Automatically update magazine index"
+            git push
+          fi
