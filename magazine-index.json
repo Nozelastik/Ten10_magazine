@@ -1,0 +1,90 @@
+{
+  "issues": [
+    {
+      "number": 1,
+      "folder": "Ten10_auto_issue1",
+      "cover": "Ten10_Magazine_n1_cover.jpg",
+      "pages": [
+        "Ten10_Magazine_n1_page_2.jpg",
+        "Ten10_Magazine_n1_page_3.jpg",
+        "Ten10_Magazine_n1_page_4.jpg",
+        "Ten10_Magazine_n1_page_5.jpg",
+        "Ten10_Magazine_n1_page_6.jpg",
+        "Ten10_Magazine_n1_page_7.jpg"
+      ]
+    },
+    {
+      "number": 2,
+      "folder": "Ten10_auto_issue2",
+      "cover": "Ten10_Magazine_n2_cover.jpg",
+      "pages": [
+        "Ten10_Magazine_n2_page_2.jpg",
+        "Ten10_Magazine_n2_page_3.jpg",
+        "Ten10_Magazine_n2_page_4.jpg",
+        "Ten10_Magazine_n2_page_5.jpg",
+        "Ten10_Magazine_n2_page_6.jpg",
+        "Ten10_Magazine_n2_page_7.jpg",
+        "Ten10_Magazine_n2_page_8.jpg",
+        "Ten10_Magazine_n2_page_9.jpg",
+        "Ten10_Magazine_n2_page_10.jpg",
+        "Ten10_Magazine_n2_page_11.jpg",
+        "Ten10_Magazine_n2_page_12.jpg",
+        "Ten10_Magazine_n2_page_13.jpg"
+      ]
+    },
+    {
+      "number": 3,
+      "folder": "Ten10_auto_issue3",
+      "cover": "Ten10_Magazine_n3_cover.jpg",
+      "pages": [
+        "Ten10_Magazine_n3_page_2.jpg",
+        "Ten10_Magazine_n3_page_3.jpg",
+        "Ten10_Magazine_n3_page_4.jpg",
+        "Ten10_Magazine_n3_page_5.jpg",
+        "Ten10_Magazine_n3_page_6.jpg",
+        "Ten10_Magazine_n3_page_7.jpg",
+        "Ten10_Magazine_n3_page_8.jpg",
+        "Ten10_Magazine_n3_page_9.jpg",
+        "Ten10_Magazine_n3_page_10.jpg",
+        "Ten10_Magazine_n3_page_11.jpg",
+        "Ten10_Magazine_n3_page_12.jpg",
+        "Ten10_Magazine_n3_page_13.jpg"
+      ]
+    },
+    {
+      "number": 4,
+      "folder": "Ten10_auto_issue4",
+      "cover": "Ten10_Magazine_n4_cover.jpg",
+      "pages": [
+        "Ten10_Magazine_n4_page_2.jpg",
+        "Ten10_Magazine_n4_page_3.jpg",
+        "Ten10_Magazine_n4_page_4.jpg",
+        "Ten10_Magazine_n4_page_5.jpg",
+        "Ten10_Magazine_n4_page_6.jpg",
+        "Ten10_Magazine_n4_page_7.jpg",
+        "Ten10_Magazine_n4_page_8.jpg",
+        "Ten10_Magazine_n4_page_9.jpg"
+      ]
+    },
+    {
+      "number": 5,
+      "folder": "Ten10_auto_issue5",
+      "cover": "Ten10_Magazine_n5_cover.jpg",
+      "pages": [
+        "Ten10_Magazine_n5_page_2.jpg",
+        "Ten10_Magazine_n5_page_3.jpg",
+        "Ten10_Magazine_n5_page_4.jpg",
+        "Ten10_Magazine_n5_page_5.jpg",
+        "Ten10_Magazine_n5_page_6.jpg",
+        "Ten10_Magazine_n5_page_7.jpg",
+        "Ten10_Magazine_n5_page_8.jpg",
+        "Ten10_Magazine_n5_page_9.jpg",
+        "Ten10_Magazine_n5_page_10.jpg",
+        "Ten10_Magazine_n5_page_11.jpg",
+        "Ten10_Magazine_n5_page_12.jpg",
+        "Ten10_Magazine_n5_page_13.jpg",
+        "Ten10_Magazine_n5_page_14.jpg"
+      ]
+    }
+  ]
+}
